@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name:       Advanced Multi Block
- * Description:       Example block scaffolded with Create Block tool.
- * Version:           0.1.0
+ * Plugin Name:       RP Advanced Multi Block
+ * Description:       Multi block theme.
+ * Version:           2.1.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
- * Author:            The WordPress Contributors
+ * Author:            Shelton joseph
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       advanced-multi-block
