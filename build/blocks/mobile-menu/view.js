@@ -1,0 +1,1 @@
+import{getContext as e,getElement as t,store as n}from"@wordpress/interactivity";const{state:s}=n("disney",{state:{learnOpen:!1,gearsOpen:!1},actions:{toggleSection(){const n=e(),{ref:o}=t(),a=n.sectionId+"Open",r=s[a];s.learnOpen=!1,s.gearsOpen=!1,r||(s[a]=!0,requestAnimationFrame(()=>{o.closest(".mobile-nav-section")?.scrollIntoView({behavior:"smooth",block:"nearest"})}))}}});

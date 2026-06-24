@@ -1,1 +1,1 @@
-import{store as e}from"@wordpress/interactivity";const{state:s}=e("disney",{state:{isSearchOpen:!1},actions:{toggleSearch(){s.isSearchOpen=!s.isSearchOpen},closeSearch(){s.isSearchOpen=!1}}});
+import{store as e}from"@wordpress/interactivity";const{state:s}=e("disney",{state:{isSearchOpen:!1},actions:{toggleSearch(){s.isSearchOpen=!s.isSearchOpen,s.mobileMenuOpen=!1},closeSearch(){s.isSearchOpen=!1}}});

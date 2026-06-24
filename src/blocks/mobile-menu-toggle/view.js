@@ -2,14 +2,11 @@ import { store } from '@wordpress/interactivity';
 
 const { state } = store( 'disney', {
 	state: {
-		isSearchOpen: false,
+		mobileMenuOpen: false,
 	},
 	actions: {
-		toggleSearch() {
-			state.isSearchOpen = ! state.isSearchOpen;
-			state.mobileMenuOpen = false;
-		},
-		closeSearch() {
+		toggleMobileMenu() {
+			state.mobileMenuOpen = ! state.mobileMenuOpen;
 			state.isSearchOpen = false;
 		},
 	},
