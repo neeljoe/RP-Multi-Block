@@ -1,1 +1,1 @@
-import{store as r}from"@wordpress/interactivity";r("disney");
+import{store as r}from"@wordpress/interactivity";r("rp-multi-block");

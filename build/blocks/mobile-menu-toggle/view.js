@@ -1,1 +1,1 @@
-import{store as e}from"@wordpress/interactivity";const{state:n}=e("disney",{state:{mobileMenuOpen:!1},actions:{toggleMobileMenu(){n.mobileMenuOpen=!n.mobileMenuOpen,n.isSearchOpen=!1}}});
+import{store as e}from"@wordpress/interactivity";const{state:t}=e("rp-multi-block",{state:{mobileMenuOpen:!1},actions:{toggleMobileMenu(){t.mobileMenuOpen=!t.mobileMenuOpen,t.isSearchOpen=!1}}});

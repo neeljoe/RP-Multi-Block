@@ -1,6 +1,6 @@
 <?php
 wp_interactivity_state(
-	'disney',
+	'rp-multi-block',
 	array(
 		'isSearchOpen' => false,
 	)
@@ -9,7 +9,7 @@ wp_interactivity_state(
 
 <div
 	<?php echo get_block_wrapper_attributes( array( 'class' => 'search-toggle-wrapper' ) ); ?>
-	data-wp-interactive="disney"
+	data-wp-interactive="rp-multi-block"
 >
 	<button
 		class="search-toggle-btn"

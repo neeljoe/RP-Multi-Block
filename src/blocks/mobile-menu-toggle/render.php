@@ -1,6 +1,6 @@
 <?php
 wp_interactivity_state(
-	'disney',
+	'rp-multi-block',
 	array(
 		'mobileMenuOpen' => false,
 	)
@@ -9,7 +9,7 @@ wp_interactivity_state(
 
 <div
 	<?php echo get_block_wrapper_attributes( array( 'class' => 'mobile-menu-toggle-wrapper' ) ); ?>
-	data-wp-interactive="disney"
+	data-wp-interactive="rp-multi-block"
 >
 	<button
 		class="navbar-toggler"

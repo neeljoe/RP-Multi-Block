@@ -1,6 +1,6 @@
 import { store, getContext, getElement } from '@wordpress/interactivity';
 
-const { state } = store( 'disney', {
+const { state } = store( 'rp-multi-block', {
 	state: {
 		learnOpen: false,
 		gearsOpen: false,

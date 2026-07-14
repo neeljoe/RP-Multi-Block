@@ -4,7 +4,7 @@ return array(
 	'mobile-menu' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'disney/mobile-menu',
+		'name' => 'rp-multi-block/mobile-menu',
 		'version' => '0.1.0',
 		'title' => 'Mobile Menu',
 		'category' => 'widgets',
@@ -26,7 +26,7 @@ return array(
 	'mobile-menu-toggle' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'disney/mobile-menu-toggle',
+		'name' => 'rp-multi-block/mobile-menu-toggle',
 		'version' => '0.1.0',
 		'title' => 'Mobile Menu Toggle',
 		'category' => 'widgets',
@@ -48,7 +48,7 @@ return array(
 	'search-panel' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'disney/search-panel',
+		'name' => 'rp-multi-block/search-panel',
 		'version' => '0.1.0',
 		'title' => 'Search Panel',
 		'category' => 'widgets',
@@ -70,7 +70,7 @@ return array(
 	'search-toggle' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'disney/search-toggle',
+		'name' => 'rp-multi-block/search-toggle',
 		'version' => '0.1.0',
 		'title' => 'Search Toggle',
 		'category' => 'widgets',

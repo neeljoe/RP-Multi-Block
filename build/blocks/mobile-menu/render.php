@@ -1,6 +1,6 @@
 <?php
 wp_interactivity_state(
-	'disney',
+	'rp-multi-block',
 	array(
 		'learnOpen'  => false,
 		'gearsOpen'  => false,
@@ -10,7 +10,7 @@ wp_interactivity_state(
 
 <div
 	<?php echo get_block_wrapper_attributes( array( 'class' => 'mobile-menu' ) ); ?>
-	data-wp-interactive="disney"
+	data-wp-interactive="rp-multi-block"
 	data-wp-bind--hidden="!state.mobileMenuOpen"
 	hidden
 >

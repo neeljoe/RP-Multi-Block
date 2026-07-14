@@ -1,3 +1,3 @@
 import { store } from '@wordpress/interactivity';
 
-store( 'disney' );
+store( 'rp-multi-block' );
