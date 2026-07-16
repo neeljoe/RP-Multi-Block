@@ -96,7 +96,7 @@ wp_interactivity_state(
 	role="region"
 	aria-label="<?php esc_attr_e( 'Category carousel', 'advanced-multi-block' ); ?>"
 >
-	<h2 class="rp-carousel-heading"><?php esc_html_e( 'Explore Topics', 'advanced-multi-block' ); ?></h2>
+	<h3 class="rp-carousel-heading"><?php esc_html_e( 'Explore Topics', 'advanced-multi-block' ); ?></h3>
 
 	<div class="rp-carousel-wrapper">
 		<button
@@ -112,8 +112,8 @@ wp_interactivity_state(
 		<div class="rp-carousel-track">
 			<?php foreach ( $carousel_items as $item ) : ?>
 			<div class="rp-carousel-card">
-				<a href="<?php echo esc_url( $item['category_url'] ); ?>" class="rp-carousel-card-link">
-					<?php if ( $item['featured_image'] ) : ?>
+				<?php if ( $item['featured_image'] ) : ?>
+				<a href="<?php echo esc_url( $item['post_url'] ); ?>" class="rp-carousel-card-image-link">
 					<div class="rp-carousel-card-image">
 						<img
 							src="<?php echo esc_url( $item['featured_image'] ); ?>"
@@ -121,25 +121,29 @@ wp_interactivity_state(
 							loading="lazy"
 						/>
 					</div>
-					<?php endif; ?>
-					<div class="rp-carousel-card-content">
-						<span class="rp-carousel-card-category">
+				</a>
+				<?php endif; ?>
+				<div class="rp-carousel-card-content">
+					<span class="rp-carousel-card-category">
+						<a href="<?php echo esc_url( $item['category_url'] ); ?>" class="rp-carousel-card-category-link">
 							<?php echo esc_html( $item['category_name'] ); ?>
-						</span>
+						</a>
+					</span>
+					<a href="<?php echo esc_url( $item['post_url'] ); ?>" class="rp-carousel-card-title-link">
 						<span class="rp-carousel-card-title">
 							<?php echo esc_html( $item['post_title'] ); ?>
 						</span>
-						<span class="rp-carousel-card-count">
-							<?php
-							printf(
-								/* translators: %s: number of articles */
-								esc_html( _n( '%s article', '%s articles', $item['post_count'], 'advanced-multi-block' ) ),
-								number_format_i18n( $item['post_count'] )
-							);
-							?>
-						</span>
-					</div>
-				</a>
+					</a>
+					<span class="rp-carousel-card-count">
+						<?php
+						printf(
+							/* translators: %s: number of articles */
+							esc_html( _n( '%s article', '%s articles', $item['post_count'], 'advanced-multi-block' ) ),
+							number_format_i18n( $item['post_count'] )
+						);
+						?>
+					</span>
+				</div>
 			</div>
 			<?php endforeach; ?>
 		</div>

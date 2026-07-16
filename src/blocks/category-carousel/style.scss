@@ -2,7 +2,7 @@
 	position: relative;
 
 	.rp-carousel-heading {
-		font-size: var( --wp--preset--font-size--small );
+		font-size: var( --wp--preset--font-size--large );
 		font-weight: 700;
 		text-transform: uppercase;
 		letter-spacing: 1.4px;
@@ -32,13 +32,18 @@
 		flex: 0 0 calc( 33.333% - 13.33px );
 		scroll-snap-align: start;
 		min-width: 0;
+		transition: transform var( --rp-transition-fast, 150ms ease );
+
+		&:hover {
+			transform: translateY( -2px );
+		}
 	}
 
-	.rp-carousel-card-link {
+	.rp-carousel-card-image-link {
 		display: block;
 		text-decoration: none;
 		color: inherit;
-		border-radius: 10px;
+		border-radius: 10px 10px 0 0;
 		overflow: hidden;
 		transition: transform var( --rp-transition-fast, 150ms ease );
 
@@ -72,6 +77,28 @@
 		letter-spacing: 1.4px;
 		font-weight: 700;
 		color: var( --wp--preset--color--accent-1, #ffb703 );
+	}
+
+	.rp-carousel-card-category-link {
+		color: var( --wp--preset--color--accent-1, #ffb703 );
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	.rp-carousel-card-title-link {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			text-decoration: none;
+
+			.rp-carousel-card-title {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	.rp-carousel-card-title {
@@ -159,7 +186,7 @@
 		}
 	}
 
-	// Responsive: 1 card on mobile, hide arrows.
+	// Responsive: 1 card on mobile.
 	@media ( max-width: 640px ) {
 		.rp-carousel-card {
 			flex: 0 0 100%;
@@ -167,7 +194,13 @@
 
 		.rp-carousel-prev,
 		.rp-carousel-next {
-			display: none;
+			left: 8px;
+			right: auto;
+		}
+
+		.rp-carousel-next {
+			right: 8px;
+			left: auto;
 		}
 	}
 }

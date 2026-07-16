@@ -14,7 +14,7 @@ export default function Edit() {
 
 	return (
 		<div { ...blockProps } className="rp-carousel rp-carousel-editor">
-			<h2 className="rp-carousel-heading">Explore Topics</h2>
+			<h3 className="rp-carousel-heading">Explore Topics</h3>
 			<div className="rp-carousel-wrapper">
 				<div className="rp-carousel-track">
 					{ mockCards.map( ( card ) => (
