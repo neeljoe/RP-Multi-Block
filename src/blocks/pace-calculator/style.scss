@@ -128,6 +128,33 @@
 	transform: rotate(0deg);
 }
 
+.rp-toggle-columns {
+	display: none;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.75rem;
+	margin-bottom: 1rem;
+	border: 1px solid var(--wp--preset--color--accent-4);
+	border-radius: 6px;
+	background: transparent;
+	color: var(--wp--preset--color--accent-4);
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	cursor: pointer;
+	transition:
+		border-color 0.2s ease,
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.rp-toggle-columns:hover {
+	background: color-mix(in srgb, var(--wp--preset--color--contrast) 5%, transparent);
+	color: var(--wp--preset--color--contrast);
+	border-color: var(--wp--preset--color--contrast);
+}
+
 .rp-table-wrap {
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
@@ -173,11 +200,15 @@
 	font-family: var(--wp--preset--font-family--fira-code);
 }
 
-.rp-col-active {
+.rp-pace-table th.rp-col-active,
+.rp-pace-table td:nth-child(4) {
 	background: color-mix(in srgb, var(--wp--preset--color--contrast) 4%, transparent);
+	font-weight: 600;
+}
+
+.rp-pace-table th.rp-col-active {
 	border-left: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 15%, transparent);
 	border-right: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 15%, transparent);
-	font-weight: 600;
 }
 
 .rp-row-race td {
@@ -186,4 +217,34 @@
 
 .rp-row-race td:first-child {
 	color: var(--wp--preset--color--accent-1);
+}
+
+@media (max-width: 768px) {
+	.rp-toggle-columns {
+		display: inline-flex;
+	}
+
+	.rp-pace-table.show-all th:nth-child(2),
+	.rp-pace-table.show-all th:nth-child(6),
+	.rp-pace-table.show-all td:nth-child(2),
+	.rp-pace-table.show-all td:nth-child(6) {
+		display: table-cell;
+	}
+
+	.rp-pace-table:not(.show-all) th:nth-child(2),
+	.rp-pace-table:not(.show-all) th:nth-child(6),
+	.rp-pace-table:not(.show-all) td:nth-child(2),
+	.rp-pace-table:not(.show-all) td:nth-child(6) {
+		display: none;
+	}
+
+	.rp-pace-table:not(.show-all) {
+		min-width: 0;
+	}
+
+	.rp-pace-table:not(.show-all) th,
+	.rp-pace-table:not(.show-all) td {
+		padding: 0.5rem 0.3rem;
+		font-size: 0.8125rem;
+	}
 }

@@ -24,10 +24,11 @@ wp_interactivity_state(
 );
 
 $initial_context = array(
-	'paceMinutes'   => 8,
-	'paceSeconds'   => 0,
-	'unit'          => 'km',
-	'showFullTable' => false,
+	'paceMinutes'    => 8,
+	'paceSeconds'    => 0,
+	'unit'           => 'km',
+	'showFullTable'  => false,
+	'showAllColumns' => false,
 );
 
 if ( ! function_exists( 'rp_theme_format_cell_time' ) ) {
@@ -121,6 +122,12 @@ if ( ! function_exists( 'rp_theme_format_cell_time' ) ) {
 				</table>
 			</div>
 		</div>
+
+		<button
+			class="rp-toggle-columns"
+			data-wp-on--click="actions.toggleAllColumns"
+			data-wp-text="state.columnsToggleLabel"
+		><?php esc_html_e( 'Show all columns', 'advanced-multi-block' ); ?></button>
 
 		<button
 			class="rp-toggle-btn"

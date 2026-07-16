@@ -73,6 +73,13 @@ function getCurrentPaceSeconds() {
 	return ( context.paceMinutes || 0 ) * 60 + ( context.paceSeconds || 0 );
 }
 
+function toggleShowAllClass( showAll ) {
+	const tables = document.querySelectorAll( '.rp-pace-table' );
+	tables.forEach( ( table ) => {
+		table.classList.toggle( 'show-all', showAll );
+	} );
+}
+
 store( 'rp-multi-block', {
 	state: {
 		get unitLabel() {
@@ -86,6 +93,10 @@ store( 'rp-multi-block', {
 		get toggleLabel() {
 			const context = getContext();
 			return context.showFullTable ? 'Hide full breakdown' : 'Show full 1K–50K breakdown';
+		},
+		get columnsToggleLabel() {
+			const context = getContext();
+			return context.showAllColumns ? 'Show less' : 'Show all columns';
 		},
 		get col0() { return formatPace( getCurrentPaceSeconds() + offsets[ 0 ] ); },
 		get col1() { return formatPace( getCurrentPaceSeconds() + offsets[ 1 ] ); },
@@ -110,6 +121,11 @@ store( 'rp-multi-block', {
 			const context = getContext();
 			context.showFullTable = ! context.showFullTable;
 		},
+		toggleAllColumns() {
+			const context = getContext();
+			context.showAllColumns = ! context.showAllColumns;
+			toggleShowAllClass( context.showAllColumns );
+		},
 	},
 	callbacks: {
 		renderRows() {
@@ -128,6 +144,11 @@ store( 'rp-multi-block', {
 
 			if ( keyTbody ) keyTbody.innerHTML = keyHtml;
 			if ( fullTbody ) fullTbody.innerHTML = fullHtml;
+
+			const tables = ref.querySelectorAll( '.rp-pace-table' );
+			tables.forEach( ( table ) => {
+				table.classList.toggle( 'show-all', context.showAllColumns );
+			} );
 		},
 	},
 } );
