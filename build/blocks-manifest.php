@@ -67,6 +67,29 @@ return array(
 		'render' => 'file:./render.php',
 		'viewScriptModule' => 'file:./view.js'
 	),
+	'pace-calculator' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'rp-multi-block/pace-calculator',
+		'version' => '0.1.0',
+		'title' => 'Pace Calculator',
+		'category' => 'widgets',
+		'icon' => 'clock',
+		'description' => 'Calculate running finish times from pace.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'interactivity' => true,
+			'html' => false
+		),
+		'textdomain' => 'advanced-multi-block',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php',
+		'viewScriptModule' => 'file:./view.js'
+	),
 	'search-panel' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
