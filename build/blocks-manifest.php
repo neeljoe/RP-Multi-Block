@@ -1,6 +1,28 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
+	'category-carousel' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'rp-multi-block/category-carousel',
+		'version' => '0.1.0',
+		'title' => 'Category Carousel',
+		'category' => 'widgets',
+		'icon' => 'carousel-view',
+		'description' => 'Horizontal carousel of category cards with featured post images. Uses the Interactivity API.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'interactivity' => true
+		),
+		'textdomain' => 'advanced-multi-block',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'render' => 'file:./render.php',
+		'viewScriptModule' => 'file:./view.js'
+	),
 	'mobile-menu' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,

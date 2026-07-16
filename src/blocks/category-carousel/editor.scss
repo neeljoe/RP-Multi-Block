@@ -1,0 +1,16 @@
+.wp-block-rp-multi-block-category-carousel {
+	.rp-carousel-editor {
+		pointer-events: none;
+	}
+
+	.rp-carousel-card-placeholder {
+		aspect-ratio: 16 / 9;
+		background: var( --wp--preset--color--accent-5, #fbfaf3 );
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px 10px 0 0;
+		font-size: 2rem;
+		color: var( --wp--preset--color--accent-4, #686868 );
+	}
+}

@@ -91,3 +91,20 @@ function enqueue_frontend_assets() {
   );
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_frontend_assets' );
+
+/**
+ * Registers the carousel featured post meta field.
+ */
+function rp_multi_block_register_carousel_meta() {
+	register_post_meta(
+		'post',
+		'_rp_carousel_featured',
+		array(
+			'show_in_rest' => true,
+			'single'       => true,
+			'type'         => 'boolean',
+			'default'      => false,
+		)
+	);
+}
+add_action( 'init', 'rp_multi_block_register_carousel_meta' );

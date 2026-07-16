@@ -1,0 +1,190 @@
+.wp-block-rp-multi-block-category-carousel {
+	position: relative;
+
+	.rp-carousel-heading {
+		font-size: var( --wp--preset--font-size--small );
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1.4px;
+		margin-bottom: var( --wp--preset--spacing--40 );
+	}
+
+	.rp-carousel-wrapper {
+		position: relative;
+	}
+
+	.rp-carousel-track {
+		display: flex;
+		gap: var( --wp--preset--spacing--40 );
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		padding: 0 var( --wp--preset--spacing--30 );
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	.rp-carousel-card {
+		flex: 0 0 calc( 33.333% - 13.33px );
+		scroll-snap-align: start;
+		min-width: 0;
+	}
+
+	.rp-carousel-card-link {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		border-radius: 10px;
+		overflow: hidden;
+		transition: transform var( --rp-transition-fast, 150ms ease );
+
+		&:hover {
+			transform: translateY( -2px );
+		}
+	}
+
+	.rp-carousel-card-image {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	.rp-carousel-card-content {
+		padding: var( --wp--preset--spacing--30 );
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.rp-carousel-card-category {
+		font-size: var( --wp--preset--font-size--small );
+		text-transform: uppercase;
+		letter-spacing: 1.4px;
+		font-weight: 700;
+		color: var( --wp--preset--color--accent-1, #ffb703 );
+	}
+
+	.rp-carousel-card-title {
+		font-size: var( --wp--preset--font-size--medium );
+		line-height: 1.4;
+		font-weight: 400;
+	}
+
+	.rp-carousel-card-count {
+		font-size: var( --wp--preset--font-size--small );
+		color: var( --wp--preset--color--accent-4, #686868 );
+	}
+
+	// Navigation arrows.
+	.rp-carousel-prev,
+	.rp-carousel-next {
+		position: absolute;
+		top: 40%;
+		transform: translateY( -50% );
+		z-index: 2;
+		width: 44px;
+		height: 44px;
+		border-radius: 100%;
+		border: 1px solid var( --wp--preset--color--accent-6, rgba( 0, 0, 0, 0.2 ) );
+		background: var( --wp--preset--color--base, #fff );
+		color: var( --wp--preset--color--contrast, #111 );
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background var( --rp-transition-fast, 150ms ease ),
+					color var( --rp-transition-fast, 150ms ease );
+
+		&:hover {
+			background: var( --wp--preset--color--contrast, #111 );
+			color: var( --wp--preset--color--base, #fff );
+		}
+
+		&:disabled {
+			opacity: 0.3;
+			cursor: default;
+
+			&:hover {
+				background: var( --wp--preset--color--base, #fff );
+				color: var( --wp--preset--color--contrast, #111 );
+			}
+		}
+	}
+
+	.rp-carousel-prev {
+		left: 0;
+	}
+
+	.rp-carousel-next {
+		right: 0;
+	}
+
+	// Dot navigation.
+	.rp-carousel-dots {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+		margin-top: var( --wp--preset--spacing--40 );
+	}
+
+	.rp-carousel-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 100%;
+		border: none;
+		background: var( --wp--preset--color--accent-4, #686868 );
+		cursor: pointer;
+		padding: 0;
+		transition: background var( --rp-transition-fast, 150ms ease );
+
+		&.is-active {
+			background: var( --wp--preset--color--accent-1, #ffb703 );
+		}
+	}
+
+	// Responsive: 2 cards on tablet.
+	@media ( max-width: 1024px ) {
+		.rp-carousel-card {
+			flex: 0 0 calc( 50% - 10px );
+		}
+	}
+
+	// Responsive: 1 card on mobile, hide arrows.
+	@media ( max-width: 640px ) {
+		.rp-carousel-card {
+			flex: 0 0 100%;
+		}
+
+		.rp-carousel-prev,
+		.rp-carousel-next {
+			display: none;
+		}
+	}
+}
+
+// Reduced motion: disable auto-scroll transitions.
+@media ( prefers-reduced-motion: reduce ) {
+	.wp-block-rp-multi-block-category-carousel {
+		.rp-carousel-track {
+			scroll-behavior: auto;
+		}
+
+		.rp-carousel-card-link {
+			transition: none;
+
+			&:hover {
+				transform: none;
+			}
+		}
+	}
+}
