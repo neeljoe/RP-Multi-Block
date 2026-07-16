@@ -104,6 +104,9 @@ function rp_multi_block_register_carousel_meta() {
 			'single'       => true,
 			'type'         => 'boolean',
 			'default'      => false,
+			'auth_callback' => function() {
+				return current_user_can( 'edit_posts' );
+			},
 		)
 	);
 }
